@@ -21,12 +21,10 @@
                 </p>
               </div>
               <div class="right__bottom">
-                <router-link class="btn" :to="'/tests/sknt'"
-                  >Реализация</router-link
-                >
+                <router-link class="btn" :to="'/tests/sknt'">Демо</router-link>
                 <a
                   class="btn"
-                  href="https://github.com/ArickCodeGuy/"
+                  href="https://github.com/ArickCodeGuy/test_tasks/tree/main/src/pages/tests/sknt"
                   target="_blank"
                   >Github</a
                 >

@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div class="sknt-page">
     <section class="section">
       <div class="container">
         <template v-for="(item, item_index) in cart.data" :key="item_index">
@@ -82,79 +82,81 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-.heading {
-  &:first-child {
-    margin-top: 0;
+.sknt-page {
+  .heading {
+    &:first-child {
+      margin-top: 0;
+      &::after {
+        display: none;
+      }
+    }
+    position: relative;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
     &::after {
-      display: none;
+      content: '';
+      position: absolute;
+      display: block;
+      top: -0.5em;
+      width: 100%;
+      height: 1px;
+      background-color: lightgrey;
     }
   }
-  position: relative;
-  font-size: 1.2em;
-  font-weight: bold;
-  margin-top: 1.5em;
-  margin-bottom: 1em;
-  &::after {
-    content: '';
-    position: absolute;
-    display: block;
-    top: -0.5em;
-    width: 100%;
-    height: 1px;
-    background-color: lightgrey;
+  .btns {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
   }
-}
-.btns {
-  margin-top: 20px;
-  display: flex;
-  gap: 10px;
-}
-.btn {
-  padding: 10px;
-  min-width: 150px;
-  border: none;
-  background-color: #2fcb5a !important;
-  border-radius: 5px;
-  color: white !important;
-  cursor: pointer;
-  transition: 0.3s;
-  &:disabled {
-    filter: grayscale(1);
+  .btn {
+    padding: 10px;
+    min-width: 150px;
+    border: none;
+    background-color: #2fcb5a !important;
+    border-radius: 5px;
+    color: white !important;
+    cursor: pointer;
+    transition: 0.3s;
+    &:disabled {
+      filter: grayscale(1);
+      cursor: auto;
+    }
+    &:hover,
+    &.active {
+      background-color: #2fcb5a;
+      color: #ffffff;
+    }
+  }
+  .go-back-btn {
+    max-width: 140px;
+  }
+  .summary {
     cursor: auto;
+    width: 100%;
+    display: flex;
+    font-weight: bold;
+    justify-content: space-between;
+    text-transform: uppercase;
+    margin-top: 20px;
   }
-  &:hover,
-  &.active {
-    background-color: #2fcb5a;
-    color: #ffffff;
+  .WizardTabs-enter-active,
+  .WizardTabs-leave-active {
+    transition: 0.5s;
   }
-}
-.go-back-btn {
-  max-width: 140px;
-}
-.summary {
-  cursor: auto;
-  width: 100%;
-  display: flex;
-  font-weight: bold;
-  justify-content: space-between;
-  text-transform: uppercase;
-  margin-top: 20px;
-}
-.WizardTabs-enter-active,
-.WizardTabs-leave-active {
-  transition: 0.5s;
-}
-.WizardTabs-enter-active {
-  transition-delay: 0.5s;
-}
-.WizardTabs-enter-from,
-.WizardTabs-leave-to {
-  max-height: 0 !important;
-}
-.WizardTabs {
-  overflow: hidden;
-  display: grid;
-  grid-gap: 10px;
-  max-height: 1000px;
+  .WizardTabs-enter-active {
+    transition-delay: 0.5s;
+  }
+  .WizardTabs-enter-from,
+  .WizardTabs-leave-to {
+    max-height: 0 !important;
+  }
+  .WizardTabs {
+    overflow: hidden;
+    display: grid;
+    grid-gap: 10px;
+    max-height: 1000px;
+  }
 }
 </style>

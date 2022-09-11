@@ -31,11 +31,6 @@ HTML, SCSS
 TypeScript  
 pinia
 
-## Установка
-
-`npm i`  
-`npm run serve`
-
 ## Макет
 
 ![Макет](expected_design.png)
