@@ -25,7 +25,6 @@
 
 ## Стек
 
-node js version 14.17.6  
 Vue 3 (script setup)  
 HTML, SCSS  
 TypeScript  
