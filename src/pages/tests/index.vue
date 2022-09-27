@@ -2,7 +2,7 @@
   <div class="Tests-page">
     <seciton class="section">
       <div class="container">
-        <h1>Тестовые задания</h1>
+        <h1>Test tasks</h1>
         <div class="items">
           <div class="item">
             <div class="left">
