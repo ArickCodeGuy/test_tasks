@@ -6,22 +6,22 @@
         <div class="items">
           <div class="item">
             <div class="left">
-              <!-- <img src="./sknt/design_result.jpg" alt="" /> -->
+              <VImg class="item__thumbnail" alt="" />
             </div>
             <div class="right">
               <div class="right__content">
                 <h2>sknt</h2>
                 <p>
-                  Разработать wizard для расчета стоимости подключения абонента.
+                  Create a wizard for calculation of amount to apply subscriber.
                 </p>
-                <h3>Стек:</h3>
+                <h3>Stack:</h3>
                 <p>
-                  node js version 14.17.6, Vue 3 composition api, Vite, HTML,
-                  SCSS, TypeScript, pinia
+                  node js, Vue 3 composition api, Vite, HTML, SCSS, TypeScript,
+                  pinia
                 </p>
               </div>
               <div class="right__bottom">
-                <router-link class="btn" :to="'/tests/sknt'">Демо</router-link>
+                <router-link class="btn" :to="'/tests/sknt'">Demo</router-link>
                 <a
                   class="btn"
                   href="https://github.com/ArickCodeGuy/test_tasks/tree/main/src/pages/tests/sknt"
@@ -64,15 +64,15 @@
         padding-top: 100%;
       }
     }
-    img {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      @media (min-width: 1200px) {
-        width: 80%;
-        height: 80%;
-      }
+  }
+  &__thumbnail {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    @media (min-width: 1200px) {
+      width: 80%;
+      height: 80%;
     }
   }
   .right {
