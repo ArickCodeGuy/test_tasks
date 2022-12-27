@@ -5,4 +5,12 @@ import '@/assets/style.scss';
 import App from './App.vue';
 import router from './router';
 
-createApp(App).use(router).use(createPinia()).mount('#app');
+import Cards from '@/components/Cards/index.vue';
+import Card from '@/components/Cards/card.vue';
+
+createApp(App)
+  .use(router)
+  .use(createPinia())
+  .component('Card', Card)
+  .component('Cards', Cards)
+  .mount('#app');

@@ -36,6 +36,7 @@ export default defineComponent({
 .header {
   padding-top: 5px;
   padding-bottom: 5px;
+  background-color: rgba(var(--rgba-contrast), 0.3);
   .container {
     display: flex;
     align-items: center;
