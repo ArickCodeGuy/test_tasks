@@ -1,30 +1,33 @@
 <template>
   <div class="Default-layout">
-    <header class="header">
-      <div class="container">
-        <nav class="nav">
-          <router-link to="/">Main</router-link>
-          <router-link to="/tests">Tests</router-link>
-        </nav>
-        <div class="change-theme" @click="changeTheme"></div>
-      </div>
-    </header>
+    <Header />
+    <div v-if="route.path !== '/'" class="container">
+      <Breadcrumbs />
+    </div>
     <slot></slot>
+    <Footer />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import Header from '@/components/Header.vue';
+import Footer from '@/components/Footer.vue';
+import Breadcrumbs from '@/components/Breadcrumbs.vue';
 import { useThemeStore } from '@/stores/theme';
+import { useRoute } from 'vue-router';
 export default defineComponent({
+  components: { Header, Footer, Breadcrumbs },
   setup() {
     const themeStore = useThemeStore();
+    const route = useRoute();
     function changeTheme() {
       const new_theme = themeStore.theme === 'light' ? 'dark' : 'light';
       themeStore.setTheme(new_theme);
     }
     return {
       changeTheme,
+      route,
     };
   },
 });
@@ -32,34 +35,5 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .Default-layout {
-}
-.header {
-  padding-top: 5px;
-  padding-bottom: 5px;
-  background-color: rgba(var(--rgba-contrast), 0.3);
-  .container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: var(--column-gap);
-  }
-}
-.nav {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  a {
-    font-size: 1.6rem;
-    line-height: 1em;
-    color: var(--color-primary);
-    text-decoration: none;
-  }
-}
-.change-theme {
-  width: 1.2rem;
-  height: 1.2rem;
-  cursor: pointer;
-  border-radius: 50%;
-  background-color: var(--contrast);
 }
 </style>

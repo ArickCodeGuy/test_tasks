@@ -5,6 +5,10 @@
 pnpm -v 7.5.1  
 node -v 16.15.1
 
+## Setup
+pnpm i  
+pnpm dev  
+
 ## Feedback
 
 Any feedback is appreciated
